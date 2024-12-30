@@ -14,9 +14,9 @@ def timer(func):
         return result
     return wrapper
 
-# Original implementation
+# previous implementation
 @timer
-def get_primes_original(n_min, n_max):
+def get_primes_previous(n_min, n_max):
     result = []
     for x in range(max(n_min, 2), n_max):
         has_factor = False
@@ -55,19 +55,20 @@ def compare_implementations(ranges):
         print(f"\nTesting range: {n_min} to {n_max}")
         
         # Run both implementations
-        result1 = get_primes_original(n_min, n_max)
+        result1 = get_primes_previous(n_min, n_max)
         result2 = get_primes_sieve(n_min, n_max)
         
-        # Verify results match
+        # Verify results match -- Unnecessary
         print(f"Results match: {result1 == result2}")
+
         print(f"Number of primes found: {len(result1)}")
 
 
 
 if __name__ == "__main__":
-    n_min = int(input("Enter the lower bound of the range: "))
-    n_max = int(input("Enter the upper bound of the range: "))
-    if n_min > n_max:
+    n_min = input("Enter the lower bound of the range: ")
+    n_max = input("Enter the upper bound of the range: ")
+    if n_min.isnumeric() and n_max.isnumeric() and int(n_min)<int(n_max):
         print("Invalid range. The lower bound must be less than or equal to the upper bound.")
     else:
         compare_implementations([(n_min, n_max)])
