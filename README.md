@@ -18,3 +18,6 @@ Generating prime numbers using the Sieve of Eratosthenes algorithm in a range of
 ## Large Number Handling
 
 For ranges that generate more than 100 prime numbers, results are automatically saved to a text file named `primes_from_[min]_to_[max].txt`.
+
+
+done out of boredom.
