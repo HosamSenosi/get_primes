@@ -1,5 +1,3 @@
-import numpy as np
-import math
 import time
 from functools import wraps
 
@@ -20,7 +18,7 @@ def get_primes_previous(n_min, n_max):
     result = []
     for x in range(max(n_min, 2), n_max):
         has_factor = False
-        for p in range(2, int(np.sqrt(x)) + 1):
+        for p in range(2, x**0.5 + 1):
             if x % p == 0:
                 has_factor = True
                 break

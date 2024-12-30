@@ -13,7 +13,7 @@ def timer(func):
 
 
 @timer
-def get_primes(n_min: int, n_max: int, show_progress: bool = True) -> list[int]:
+def get_primes(n_min: int, n_max: int, show_progress: bool = False) -> list[int]:
     """
     Generate prime numbers between n_min and n_max using the Sieve of Eratosthenes algorithm.
     
@@ -60,7 +60,7 @@ if __name__ == "__main__":
     n_min=input("Enter the lower bound of the range: ")
     n_max=input("Enter the upper bound of the range: ")
     if n_min.isnumeric() and n_max.isnumeric() and int(n_min)<int(n_max):
-        primes = get_primes(int(n_min),int(n_max))
+        primes = get_primes(int(n_min),int(n_max),True)
         len_primes=len(primes)
         print(f"There are {len_primes} primes between {n_min} and {n_max} \n ")
         if len_primes > 100:
